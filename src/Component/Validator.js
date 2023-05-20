@@ -287,7 +287,7 @@ function Validator() {
                         <Col xs={12} sm={12} md={8} lg={8}>
                             <div className="calc-box">
                                 <h3>$CREDIT Calculator</h3>
-                                <p>Stake CREDIT to earn CSCDAOV rewards.</p>
+                                <p>Stake CREDIT to earn CSCDAOV annual rewards.</p>
                                 <div className="add-liquidity">
                                     <div className="content">
                                         <div className="d-flex align-items-center justify-content-between">
