@@ -275,11 +275,104 @@ function Validator() {
                 </Container>
             </section>
 
-            
+            <section className="calculator-section">
+                <div className="curve-left">
+                    <img src={require('../Assets/img/why-token-curve-left.png').default} alt="curve-left" />
+                </div>
+                <div className="curve-right">
+                    <img src={require('../Assets/img/why-token-curve-right.png').default} alt="curve-right" />
+                </div>
+                <Container>
+                    <Row className="justify-content-center">
+                        <Col xs={12} sm={12} md={8} lg={8}>
+                            <div className="calc-box">
+                                <h3>$CREDIT Calculator</h3>
+                                <p>Stake CREDIT to earn USDT rewards up to 50% APY.</p>
+                                <div className="add-liquidity">
+                                    <div className="content">
+                                        <div className="d-flex align-items-center justify-content-between">
+                                            <div className="labels">
+                                                <h6>CREDIT</h6>
+                                            </div>
+                                            <div className="labels d-flex">
+                                                <input type="text" value={amount} onChange={(e) => handleChangeAmount(e)} placeholder="5000" />
+                                                <Button className="input-button" onClick={() => handleMaxAmount()}>Max</Button>
+                                            </div>
+
+                                        </div>
+                                        <span style={{"fontSize" : "14px"}} className='text-danger'>{error}</span>
+                                    </div>
+                                </div>
+                                <div className="plus-sys">+</div>
+                                <div className="add-liquidity-2">
+                                    <p>Lock tokens for</p>
+                                    <div className="text-center">
+                                        {CREDIT_STAKE_APY2.map((rowdata, index) => {
+                                            return (
+                                                <button key={index} onClick={(e) => handleChangeAPY(e, index)} className={`btn-box ${rowdata.apy === CREDIT_STAKE_APY2[selectedAPY].apy ? 'active' : ''}`}>
+                                                    {rowdata.time ? rowdata.time : ' - '} Days
+                                                </button>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                                <div className="plus-sys">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                                </div>
+                                <h4>Upto {CREDIT_STAKE_APY2[selectedAPY].apy}% Returns on {CREDIT_STAKE_APY2[selectedAPY].time} Days</h4>
+                                <h4>locked until {endtime.toUTCString()}</h4>
+                                {account ? (
+                                    <Button className="theme-btn w-100 mt-3" onClick={() => !loading ? handleStake() : null}>{loading ? 'Loading…' : 'Stake'}</Button>
+                                ) : (
+                                    <Button className="theme-btn w-100 mt-3">Connect Wallet</Button>
+                                )}
+
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
 
             <section className="details-section">
                 <Container>
-
+                    <Row>
+                        <Col sm={12} md={6} lg={4}>
+                            <div className="details-box">
+                                <div className="title">USDT Earned</div>
+                                <h4>{accStats.totalClaimedRewardTokenUser ? formatPrice(accStats.totalClaimedRewardTokenUser) : 0}</h4>
+                            </div>
+                        </Col>
+                        <Col sm={12} md={6} lg={4}>
+                            <div className="details-box">
+                                <div className="title">Your CREDIT Wallet Balance</div>
+                                <h4>{accStats.stakeTokenBalance ? formatPrice(accStats.stakeTokenBalance) : 0}</h4>
+                            </div>
+                        </Col>
+                        <Col sm={12} md={6} lg={4}>
+                            <div className="details-box">
+                                <div className="title">Claimed Reward</div>
+                                <h4>{accStats.totalClaimedRewardTokenUser ? formatPrice(accStats.totalClaimedRewardTokenUser) : 0}</h4>
+                            </div>
+                        </Col>
+                        <Col sm={12} md={6} lg={4}>
+                            <div className="details-box">
+                                <div className="title">Current Staked</div>
+                                <h4>{accStats.currentStake ? formatPrice(accStats.currentStake) : 0}</h4>
+                            </div>
+                        </Col>
+                        <Col sm={12} md={6} lg={4}>
+                            <div className="details-box">
+                                <div className="title">Total Staked</div>
+                                <h4>{accStats.totalStakedTokenUser ? formatPrice(accStats.totalStakedTokenUser) : 0}</h4>
+                            </div>
+                        </Col>
+                        <Col sm={12} md={6} lg={4}>
+                            <div className="details-box">
+                                <div className="title">Total UnStaked</div>
+                                <h4>{accStats.totalUnstakedTokenUser ? formatPrice(accStats.totalUnstakedTokenUser) : 0}</h4>
+                            </div>
+                        </Col>
+                    </Row>
                     <Row className="mt-5">
                         <Col sm={12}>
                             <h3 className="text-white">Transctions History</h3>
