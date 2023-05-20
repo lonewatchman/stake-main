@@ -338,7 +338,7 @@ function CreditStake() {
                     <Row>
                         <Col sm={12} md={6} lg={4}>
                             <div className="details-box">
-                                <div className="title">USDT Earned</div>
+                                <div className="title">CSCDAOV Earned</div>
                                 <h4>{accStats.totalClaimedRewardTokenUser ? formatPrice(accStats.totalClaimedRewardTokenUser) : 0}</h4>
                             </div>
                         </Col>
