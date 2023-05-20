@@ -1,0 +1,565 @@
+[
+    {
+      "type": "constructor",
+      "stateMutability": "nonpayable",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "_owner",
+          "internalType": "address payable"
+        },
+        {
+          "type": "address",
+          "name": "rewtoken",
+          "internalType": "address"
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "name": "HARVEST",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "Staker",
+          "internalType": "address",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "amount",
+          "internalType": "uint256",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "STAKE",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "Staker",
+          "internalType": "address",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "amount",
+          "internalType": "uint256",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "UNSTAKE",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "Staker",
+          "internalType": "address",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "amount",
+          "internalType": "uint256",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "Bonus",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "Duration",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "outputs": [],
+      "name": "SetStakeBonus",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "first",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "second",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "third",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "fourth",
+          "internalType": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "outputs": [],
+      "name": "SetStakeDuration",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "first",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "second",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "third",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "fourth",
+          "internalType": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "outputs": [],
+      "name": "SetStakeLimits",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "_min",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "_max",
+          "internalType": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "totalStakedTokenUser",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "totalUnstakedTokenUser",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "totalClaimedRewardTokenUser",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "stakeCount",
+          "internalType": "uint256"
+        },
+        {
+          "type": "bool",
+          "name": "alreadyExists",
+          "internalType": "bool"
+        }
+      ],
+      "name": "Stakers",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        }
+      ],
+      "name": "StakersID",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "getPriceinUSD",
+      "inputs": []
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "outputs": [],
+      "name": "harvest",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "index",
+          "internalType": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "maxStakeableToken",
+      "inputs": []
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "minimumStakeToken",
+      "inputs": []
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address payable"
+        }
+      ],
+      "name": "owner",
+      "inputs": []
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "percentDivider",
+      "inputs": []
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "realtimeReward",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "user",
+          "internalType": "address"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "realtimeRewardPerBlock",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "user",
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "blockno",
+          "internalType": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "contract IERC20"
+        }
+      ],
+      "name": "rewardToken",
+      "inputs": []
+    },
+    {
+      "type": "function",
+      "stateMutability": "payable",
+      "outputs": [],
+      "name": "stake",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "timeperiod",
+          "internalType": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "unstaketime",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "staketime",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "amount",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "rewardTokenAmount",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "reward",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "lastharvesttime",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "remainingreward",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "harvestreward",
+          "internalType": "uint256"
+        },
+        {
+          "type": "uint256",
+          "name": "persecondreward",
+          "internalType": "uint256"
+        },
+        {
+          "type": "bool",
+          "name": "withdrawan",
+          "internalType": "bool"
+        },
+        {
+          "type": "bool",
+          "name": "unstaked",
+          "internalType": "bool"
+        }
+      ],
+      "name": "stakersRecord",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "",
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "totalClaimedRewardToken",
+      "inputs": []
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "totalStakedToken",
+      "inputs": []
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "totalStakers",
+      "inputs": []
+    },
+    {
+      "type": "function",
+      "stateMutability": "view",
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": "",
+          "internalType": "uint256"
+        }
+      ],
+      "name": "totalUnStakedToken",
+      "inputs": []
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "outputs": [],
+      "name": "unstake",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "index",
+          "internalType": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "outputs": [],
+      "name": "withdrawNative",
+      "inputs": []
+    },
+    {
+      "type": "function",
+      "stateMutability": "nonpayable",
+      "outputs": [],
+      "name": "withdrawToken",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "addr",
+          "internalType": "address"
+        },
+        {
+          "type": "uint256",
+          "name": "amount",
+          "internalType": "uint256"
+        }
+      ]
+    },
+    {
+      "type": "receive",
+      "stateMutability": "payable"
+    }
+  ]
