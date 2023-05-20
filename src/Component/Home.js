@@ -349,7 +349,7 @@ function Home() {
                         <Col xs={12} sm={12} md={8} lg={8}>
                             <div className="calc-box">
                                 <h3>$WCREDIT Calculator</h3>
-                                <p>Stake WCREDIT to earn CSCDAOV annual rewards.</p>
+                                <p>Stake WCREDIT to earn CSCDAOV airdrop rewards.</p>
                                 <div className="add-liquidity">
                                     <div className="content">
                                         <div className="d-flex align-items-center justify-content-between">
