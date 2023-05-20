@@ -450,7 +450,7 @@ function Home() {
                                         <th>Unstake Date</th>
                                         <th>Earn Reward</th>
                                         <th>Unstake</th>
-                                        <th>Harvest</th>
+                                        <th>Unavailable</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -463,6 +463,7 @@ function Home() {
                                                     <td>{rowdata[0] ? new Date(rowdata[0] * 1000).toGMTString() : ' - '}</td>
                                                     <td>{accStats.rewardHistory[index] ? parseFloat(accStats.rewardHistory[index][0] / Math.pow(10, accStats.rewardTokenDecimals)).toFixed(5) : 0}</td>
                                                     <td><Button onClick={() => handleUnStake(index)} disabled={rowdata[10]} className="theme-btn">Unstake</Button></td>
+                                                    <td><Button onClick={() => handleHarvest(index)} disabled={rowdata[10]} className="theme-btn">Unavailable</Button></td>
                                                 </tr>
                                             )
                                         })
